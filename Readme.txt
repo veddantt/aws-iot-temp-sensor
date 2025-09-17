@@ -1,27 +1,24 @@
-# AWS IoT Device Shadow with Raspberry Pi
+aws-iot-temp-sensor
+📝 Description
+This project simulates an AWS IoT temperature sensor. While it lacks a traditional description or specified tech stack in the original prompt, its implied function suggests the use of AWS IoT services alongside common technologies for sensor data simulation and transmission. Key features would likely include generating simulated temperature readings, publishing these readings to the AWS IoT platform, and potentially integrating with other AWS services for data storage, analysis, and visualization. The tech stack would realistically involve Python for the simulation script, the AWS IoT Device SDK for communication, and potentially services like AWS Lambda, DynamoDB, S3, and QuickSight for a more comprehensive IoT solution.
 
-This project demonstrates connecting a Raspberry Pi to AWS IoT Core using a Device Shadow, publishing simulated temperature sensor readings, and triggering an AWS Lambda function that processes the data and sends alerts via Amazon SES.
+📁 Project Structure
+.
+├── Readme.txt
+├── device
+│   └── Temperature_Sensing_Sending.py
+├── lambda
+│   ├── lambda_permission.json
+│   └── lambda_process_logic.py
+└── report
+    └── AWS_IoT_Lambda_Report.docx
+👥 Contributing
+Contributions are welcome! Here's how you can help:
 
-## Components
-- **Device script** (`device/Temperature_Sensing_Sending.py`)  
-  Publishes simulated temperature readings to AWS IoT Core Device Shadow.
-
-- **AWS Lambda function** (`lambda/lambda_process_logic.py`)  
-  Processes temperature updates and sends SES email alerts if threshold is exceeded.
-
-- **IAM policy** (`lambda/lambda_permission.json`)  
-  Grants the Lambda function permissions for SES and CloudWatch logging.
-
-- **Report** (`report/report.pdf`)  
-  Contains implementation steps, screenshots, challenges, test cases, and latency measurements.
-
-## How to Run
-1. Register a Thing in AWS IoT Core, create certs & attach policy.
-2. Place the downloaded certificates on your Raspberry Pi.
-3. Update `Temperature_Sensing_Sending.py` with:
-   - Your AWS IoT endpoint
-   - Paths to cert/key/CA files
-   - Your Thing name
-4. Run the script:  
-   ```bash
-   python3 Temperature_Sensing_Sending.py
+Fork the repository
+Clone your fork: git clone https://github.com/veddantt/aws-iot-temp-sensor.git
+Create a new branch: git checkout -b feature/your-feature
+Commit your changes: git commit -am 'Add some feature'
+Push to your branch: git push origin feature/your-feature
+Open a pull request
+Please ensure your code follows the project's style guidelines and includes tests where applicable.
